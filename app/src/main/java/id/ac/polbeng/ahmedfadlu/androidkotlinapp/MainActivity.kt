@@ -5,12 +5,18 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import id.ac.polbeng.ahmedfadlu.androidkotlinapp.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     private lateinit var tvCounter: TextView
     private lateinit var btnAddNumber: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         tvCounter = findViewById(R.id.tvCounter)
         btnAddNumber = findViewById(R.id.btnAddNumber)
         tvCounter.text = "1"
